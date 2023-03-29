@@ -8,7 +8,7 @@ on:
 
 jobs:
   settings:
-    runs-on: macos-latest
+    runs-on: macos-lates
     env:
       FAIRWINDS_TOKEN: ${{ secrets.FAIRWINDS_TOKEN }}
     steps:
