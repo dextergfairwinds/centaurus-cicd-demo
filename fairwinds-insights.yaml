@@ -1,5 +1,5 @@
 options:
-      organization: dextertest
+      organization: centaurus
       setExitCode: false
 
       # You may need to set this to 'main'
