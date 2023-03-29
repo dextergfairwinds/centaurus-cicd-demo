@@ -1,0 +1,33 @@
+name: Fairwinds Insights
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  settings:
+    runs-on: macos-latest
+    env:
+      FAIRWINDS_TOKEN: ${{ secrets.FAIRWINDS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Fairwinds Settings
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          brew install FairwindsOps/tap/insights
+          insights-cli push settings
+          
+  build:
+    runs-on: ubuntu-latest
+    env:
+      FAIRWINDS_TOKEN: ${{ secrets.FAIRWINDS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Fairwinds Insights
+        run: |
+          curl -L https://insights.fairwinds.com/v0/insights-ci-4.2.0.sh > insights-ci.sh
+          echo "99662f37b973016854cb125f0b8733defd00288fe7f1a6a6477fa3875aec512a *insights-ci.sh" | shasum -a 256 --check
+          chmod +x insights-ci.sh
+          ./insights-ci.sh

@@ -1,0 +1,26 @@
+options:
+      organization: dextertest
+      setExitCode: false
+
+      # You may need to set this to 'main'
+      baseBranch: main
+
+    # These images will be scanned for vulnerabilities
+images:
+      docker:
+        - nginx:1.18-alpine
+    #     - quay.io/dextertest/my-app:$CI_HASH
+
+    # These manifests will be scanned for configuration issues
+manifests:
+      yaml:
+        - ./deploy.yaml
+      # - ./nginx.yaml
+      #   - ./main.deployment.yaml
+      # helm:
+      #   - name: prod
+      #     path: ./deploy/chart
+      #     values:
+      #       foo: bar
+      
+      # sample yaml test file
