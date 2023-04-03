@@ -7,17 +7,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  # settings:
-  #   runs-on: macos-latest
-  #   env:
-  #     FAIRWINDS_TOKEN: ${{ secrets.FAIRWINDS_TOKEN }}
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - name: Fairwinds Settings
-  #       run: |
-  #         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  #         brew install FairwindsOps/tap/insights
-  #         insights-cli push settings
+  settings:
+    runs-on: macos-latest
+    env:
+      FAIRWINDS_TOKEN: ${{ secrets.FAIRWINDS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Fairwinds Settings
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          brew install FairwindsOps/tap/insights
+          insights-cli push settings
           
   build:
     runs-on: ubuntu-latest
