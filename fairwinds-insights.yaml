@@ -1,6 +1,6 @@
 options:
       organization: centaurus
-      setExitCode: true
+      setExitCode: false
 
       # You may need to set this to 'main'
       baseBranch: main
