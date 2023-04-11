@@ -8,3 +8,20 @@ checks:
         block: true
       admission:
         block: false
+    cpuLimitsMissing:
+      ci:
+        block: true
+    cpuRequestsMissing:
+      ci:
+        block: true
+    memoryLimitsMissing:
+      ci:
+        block: true
+    memoryRequestsMissing:
+      ci:
+        block: true
+  opa:
+    label-required:
+      ci:
+        bloc: true
+     
