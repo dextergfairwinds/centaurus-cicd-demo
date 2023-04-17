@@ -9,7 +9,7 @@ options:
 images:
       docker:
         - nginx:1.18-alpine
-        - bitnami/external-dns:0.13.1-debian-11r0
+        - jtblin/kube2iam:0.10.9
     #     - quay.io/dextertest/my-app:$CI_HASH
 
     # These manifests will be scanned for configuration issues
