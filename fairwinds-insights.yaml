@@ -10,6 +10,7 @@ images:
       docker:
         - nginx:1.18-alpine
         - bitnami/external-dns:0.12.0-debian-10-r8
+        - bitnami/redis:4.0.11-debian-9-r89
     #     - quay.io/dextertest/my-app:$CI_HASH
 
     # These manifests will be scanned for configuration issues
