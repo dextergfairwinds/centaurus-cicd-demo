@@ -11,6 +11,7 @@ images:
         - nginx:1.18-alpine
         - bitnami/external-dns:0.12.0-debian-10-r8
         - bitnami/redis:4.0.11-debian-9-r89
+        - registry.k8s.io/metrics-server/metrics-server:v0.6.2
     #     - quay.io/dextertest/my-app:$CI_HASH
 
     # These manifests will be scanned for configuration issues
