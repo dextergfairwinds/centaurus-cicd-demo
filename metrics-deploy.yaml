@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metrics-vuln-deployment
+  labels:
+    app: metrics-vuln
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: metrics-vuln
+  template:
+    metadata:
+      labels:
+        app: metrics-vuln
+    spec:
+      containers:
+      - name: metrics-server
+        image: registry.k8s.io/metrics-server/metrics-server:v0.6.2

@@ -3,7 +3,7 @@ checks:
     runAsRootAllowed:
       severity: medium
     livenessProbeMissing:
-      severity: high
+      severity: medium
       ci:
         block: true
       admission:
@@ -23,5 +23,5 @@ checks:
   opa:
     label-required:
       ci:
-        bloc: true
+        block: true
      
