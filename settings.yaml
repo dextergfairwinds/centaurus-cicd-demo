@@ -2,6 +2,9 @@ checks:
   polaris:
     runAsRootAllowed:
       severity: medium
+    privilegeEscalationAllowed:
+      admission:
+        block: false
     livenessProbeMissing:
       severity: medium
       ci:
