@@ -3,6 +3,7 @@ checks:
     runAsRootAllowed:
       severity: medium
     privilegeEscalationAllowed:
+      severity: medium
       admission:
         block: false
     livenessProbeMissing:
