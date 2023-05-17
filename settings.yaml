@@ -3,9 +3,9 @@ checks:
     runAsRootAllowed:
       severity: medium
     privilegeEscalationAllowed:
-      severity: medium
+      severity: high
       admission:
-        block: false
+        block: true
     livenessProbeMissing:
       severity: medium
       ci:
