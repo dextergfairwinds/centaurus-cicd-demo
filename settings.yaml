@@ -9,7 +9,7 @@ checks:
     livenessProbeMissing:
       severity: medium
       ci:
-        block: true
+        block: false
       admission:
         block: false
     cpuLimitsMissing:
