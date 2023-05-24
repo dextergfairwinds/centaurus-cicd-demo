@@ -7,11 +7,11 @@ checks:
       admission:
         block: true
     livenessProbeMissing:
-      severity: medium
+      severity: high
       ci:
         block: false
       admission:
-        block: false
+        block: true
     cpuLimitsMissing:
       ci:
         block: true
