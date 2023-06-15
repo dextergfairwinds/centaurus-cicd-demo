@@ -1,4 +1,4 @@
-apiVersion: v1beta1.metrics.k8s.io
+apiVersion: policy/v1beta1
 kind: Deployment
 metadata:
   name: nginx-deployment
