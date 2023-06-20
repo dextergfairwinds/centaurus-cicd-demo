@@ -28,4 +28,7 @@ checks:
     label-required:
       ci:
         block: true
+    finops-labels:
+      ci:
+        block: true
      
