@@ -4,6 +4,9 @@ metadata:
   name: nginx-deployment
   labels:
     app: nginx
+    cost-center: fairwinds-demo
+    team: developmentone
+    owner: dexter
 spec:
   replicas: 3
   selector:
