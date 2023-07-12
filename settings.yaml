@@ -31,7 +31,7 @@ checks:
     finops-labels:
       ci:
         block: true
-    dont-deploy-into-certain-namespaes:
+    default-namespace:
       admission:
         block: true      
      
