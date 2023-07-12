@@ -31,6 +31,8 @@ checks:
     finops-labels:
       ci:
         block: true
+      admission:
+        block: false  
     default-namespace:
       admission:
         block: true      
