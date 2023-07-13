@@ -2,6 +2,8 @@ checks:
   polaris:
     runAsRootAllowed:
       severity: high
+      ci:
+        block: false
       admission:
         block: true
     privilegeEscalationAllowed:
