@@ -9,7 +9,7 @@ checks:
       admission:
         block: true
     livenessProbeMissing:
-      severity: high
+      severity: medium
       ci:
         block: false
       admission:
