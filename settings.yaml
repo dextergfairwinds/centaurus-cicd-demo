@@ -1,7 +1,9 @@
 checks:
   polaris:
     runAsRootAllowed:
-      severity: medium
+      severity: high
+      admission:
+        block: true
     privilegeEscalationAllowed:
       severity: high
       admission:
@@ -11,7 +13,7 @@ checks:
       ci:
         block: false
       admission:
-        block: true
+        block: false
     cpuLimitsMissing:
       ci:
         block: true
