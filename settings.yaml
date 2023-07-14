@@ -5,7 +5,7 @@ checks:
       ci:
         block: false
       admission:
-        block: true
+        block: false
     privilegeEscalationAllowed:
       severity: high
       admission:
