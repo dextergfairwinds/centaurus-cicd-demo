@@ -28,4 +28,4 @@ manifests:
       # sample yaml test file
 terraform:
   paths:
-    # - ./terraform/
+    - ./terraform/

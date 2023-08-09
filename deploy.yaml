@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: passive-admission-controller
+  namespace: sample-admission
   labels:
     app: nginx
 spec:
