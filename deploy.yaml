@@ -4,11 +4,8 @@ metadata:
   name: nginx-deployment
   labels:
     app: nginx
-    cost-center: fairwinds-demo
-    team: developmentone
-    owner: dexter
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: nginx
@@ -17,46 +14,16 @@ spec:
       labels:
         app: nginx
     spec:
-      topologySpreadConstraints:
-          - maxSkew: 1
-            topologyKey: "topology.kubernetes.io/zone"
-            whenUnsatisfiable: ScheduleAnyway
-            labelSelector:
-              matchLabels:
-                app.kubernetes.io/name: your-app-name
-          - maxSkew: 1
-            topologyKey: "kubernetes.io/hostname"
-            whenUnsatisfiable: ScheduleAnyway
-            labelSelector:
-              matchLabels:
-                app.kubernetes.io/name: your-app-name
       containers:
-        - name: nginx
-          image: nginx:1.7.9
-          ports:
-            - containerPort: 82
-          securityContext:
-            allowPrivilegeEscalation: false
-            privileged: false
-            readOnlyRootFilesystem: true
-            runAsNonRoot: true
-            capabilities:
-              drop:
-                - ALL
-          imagePullPolicy: Always
-          readinessProbe:
-            # TODO: Change the readinessProbe setting to reflect your application's readiness to serve traffic
-            exec:
-              command:
-                - cat
-                - /tmp/healthy
-            initialDelaySeconds: 5
-            periodSeconds: 5
-          livenessProbe:
-            # TODO: Change the livenessProbe setting to reflect your application's health
-            exec:
-              command:
-                - cat
-                - /tmp/healthy
-            initialDelaySeconds: 5
-            periodSeconds: 5
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 82
+        securityContext:
+          allowPrivilegeEscalation: true
+          privileged: false
+          readOnlyRootFilesystem: true
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
