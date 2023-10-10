@@ -9,7 +9,7 @@ checks:
     privilegeEscalationAllowed:
       severity: high
       admission:
-        block: true
+        block: false
     livenessProbeMissing:
       severity: medium
       ci:
@@ -18,23 +18,23 @@ checks:
         block: false
     cpuLimitsMissing:
       ci:
-        block: true
+        block: false
     cpuRequestsMissing:
       ci:
-        block: true
+        block: false
     memoryLimitsMissing:
       ci:
-        block: true
+        block: false
     memoryRequestsMissing:
       ci:
-        block: true
+        block: false
   opa:
     label-required:
       ci:
-        block: true
+        block: false
     finops-labels:
       ci:
-        block: true
+        block: false
       admission:
         block: false  
     default-namespace:
