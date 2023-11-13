@@ -26,6 +26,6 @@ manifests:
       #       foo: bar
       
       # sample yaml test file
-terraform:
-  paths:
-    - ./terraform/
+# terraform:
+#   paths:
+#     - ./terraform/
