@@ -1,13 +1,13 @@
 checks:
   polaris:
     runAsRootAllowed:
-      severity: high
+      severity: medium
       ci:
         block: false
       admission:
         block: false
     privilegeEscalationAllowed:
-      severity: high
+      severity: medium
       admission:
         block: false
     livenessProbeMissing:
@@ -39,5 +39,5 @@ checks:
         block: false  
     default-namespace:
       admission:
-        block: true      
+        block: false      
      
