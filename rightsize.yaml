@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kube-hunter
-  namespace: insights-agent-alpha
+  namespace: insights-agent-1
   labels:
     app: nginx
     cost-center: fairwinds-demo
@@ -32,7 +32,7 @@ spec:
               matchLabels:
                 app.kubernetes.io/name: your-app-name
       containers:
-        - name: kube-hunter
+        - name: insights-uploader
           image: nginx:1.7.9
           ports:
             - containerPort: 82
