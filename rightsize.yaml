@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kube-hunter
+  namespace: insights-agent-alpha
   labels:
     app: nginx
     cost-center: fairwinds-demo
