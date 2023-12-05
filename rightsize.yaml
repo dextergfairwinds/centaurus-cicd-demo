@@ -1,8 +1,8 @@
 apiVersion: apps/v1
-kind: CronJob
+kind: Deployment
 metadata:
-  name: kube-hunter
-  namespace: insights-agent-1
+  name: api
+  namespace: production
   labels:
     app: nginx
     cost-center: fairwinds-demo
@@ -32,7 +32,7 @@ spec:
               matchLabels:
                 app.kubernetes.io/name: your-app-name
       containers:
-        - name: insights-uploader
+        - name: stress
           image: nginx:1.7.9
           ports:
             - containerPort: 82
