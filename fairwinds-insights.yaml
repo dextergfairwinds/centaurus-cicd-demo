@@ -17,7 +17,7 @@ images:
 manifests:
       yaml:
         - ./deploy.yaml
-        - ./rightsize.yaml
+        # - ./rightsize.yaml
       # - ./nginx.yaml
       #   - ./main.deployment.yaml
       # helm:
