@@ -4,8 +4,11 @@ metadata:
   name: nginx-deployment
   labels:
     app: nginx
+    cost-center: fairwinds-demo
+    team: developmentone
+    owner: dexter
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: nginx
@@ -14,16 +17,53 @@ spec:
       labels:
         app: nginx
     spec:
+      topologySpreadConstraints:
+          - maxSkew: 1
+            topologyKey: "topology.kubernetes.io/zone"
+            whenUnsatisfiable: ScheduleAnyway
+            labelSelector:
+              matchLabels:
+                app.kubernetes.io/name: your-app-name
+          - maxSkew: 1
+            topologyKey: "kubernetes.io/hostname"
+            whenUnsatisfiable: ScheduleAnyway
+            labelSelector:
+              matchLabels:
+                app.kubernetes.io/name: your-app-name
       containers:
-      - name: nginx
-        image: nginx:1.7.9
-        ports:
-        - containerPort: 82
-        securityContext:
-          allowPrivilegeEscalation: true
-          privileged: false
-          readOnlyRootFilesystem: true
-          runAsNonRoot: true
-          capabilities:
-            drop:
-              - ALL
+        - name: nginx
+          image: nginx:1.7.9
+          ports:
+            - containerPort: 82
+          securityContext:
+            allowPrivilegeEscalation: false
+            privileged: false
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            capabilities:
+              drop:
+                - ALL
+          resources:
+            limits:
+              memory: 512Mi # TODO: Set this to the maximum amount of memory you want your workload to use
+              cpu: 100m # TODO: Set this to the maximum amount of CPU you want your workload to use
+            requests:
+              memory: 512Mi # TODO: Set this to the amount of Memory you want to reserve for your workload
+              cpu: 100m # TODO: Set this to the amount of CPU you want to reserve for your workload
+          imagePullPolicy: Always
+          readinessProbe:
+            # TODO: Change the readinessProbe setting to reflect your application's readiness to serve traffic
+            exec:
+              command:
+                - cat
+                - /tmp/healthy
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            # TODO: Change the livenessProbe setting to reflect your application's health
+            exec:
+              command:
+                - cat
+                - /tmp/healthy
+            initialDelaySeconds: 5
+            periodSeconds: 5
