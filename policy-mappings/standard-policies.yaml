@@ -1,0 +1,7 @@
+type: PolicyMapping
+name: standard-policies
+spec:
+  block: true
+  appGroups: [allresources-group]
+  policies: [polaris.memoryRequestsMissing, polaris.cpuRequestsMissing, polaris.tagNotSpecified, opa.finops-labels, opa.default-namespace]
+  contexts: [Admission, Agent, CI]

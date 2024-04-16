@@ -1,43 +1,43 @@
-checks:
-  polaris:
-    runAsRootAllowed:
-      severity: medium
-      ci:
-        block: false
-      admission:
-        block: false
-    privilegeEscalationAllowed:
-      severity: medium
-      admission:
-        block: false
-    livenessProbeMissing:
-      severity: medium
-      ci:
-        block: false
-      admission:
-        block: false
-    cpuLimitsMissing:
-      ci:
-        block: false
-    cpuRequestsMissing:
-      ci:
-        block: false
-    memoryLimitsMissing:
-      ci:
-        block: false
-    memoryRequestsMissing:
-      ci:
-        block: false
-  opa:
-    label-required:
-      ci:
-        block: false
-    finops-labels:
-      ci:
-        block: false
-      admission:
-        block: false  
-    default-namespace:
-      admission:
-        block: false      
+# checks:
+#   polaris:
+#     runAsRootAllowed:
+#       severity: medium
+#       ci:
+#         block: false
+#       admission:
+#         block: false
+#     privilegeEscalationAllowed:
+#       severity: medium
+#       admission:
+#         block: false
+#     livenessProbeMissing:
+#       severity: medium
+#       ci:
+#         block: false
+#       admission:
+#         block: false
+#     cpuLimitsMissing:
+#       ci:
+#         block: false
+#     cpuRequestsMissing:
+#       ci:
+#         block: false
+#     memoryLimitsMissing:
+#       ci:
+#         block: false
+#     memoryRequestsMissing:
+#       ci:
+#         block: false
+#   opa:
+#     label-required:
+#       ci:
+#         block: false
+#     finops-labels:
+#       ci:
+#         block: false
+#       admission:
+#         block: false  
+#     default-namespace:
+#       admission:
+#         block: false      
      
