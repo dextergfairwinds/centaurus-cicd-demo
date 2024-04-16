@@ -1,0 +1,6 @@
+type: AppGroup
+name: production-group
+spec:
+  match:
+    -
+      namespaces: [production]

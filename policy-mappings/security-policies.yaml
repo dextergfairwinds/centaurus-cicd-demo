@@ -1,0 +1,7 @@
+type: PolicyMapping
+name: security-policies
+spec:
+  block: true
+  appGroups: [production-group]
+  policies: [polaris.runAsRootAllowed, polaris.runAsPrivileged]
+  contexts: [Admission, Agent, CI]
