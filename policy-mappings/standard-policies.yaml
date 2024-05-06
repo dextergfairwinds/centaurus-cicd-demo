@@ -3,5 +3,6 @@ name: standard-policies
 spec:
   block: true
   appGroups: [allresources-group]
-  policies: [polaris.memoryRequestsMissing, polaris.cpuRequestsMissing, polaris.tagNotSpecified, opa.finops-labels, opa.default-namespace]
+  # policies: [polaris.memoryRequestsMissing, polaris.cpuRequestsMissing, polaris.tagNotSpecified, opa.finops-labels, opa.default-namespace, prometheus-metrics.right_size_container]
+  policies: [polaris.memoryRequestsMissing, polaris.cpuRequestsMissing, prometheus-metrics.right_size_container, opa.finops-labels]
   contexts: [Admission, Agent, CI]
