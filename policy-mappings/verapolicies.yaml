@@ -1,0 +1,17 @@
+name: vpolicies
+spec:
+    appGroups:
+        - allwithlabelexclusion
+    contexts:
+        - Agent
+        - Admission
+        - CI
+    policies:
+        - polaris.memoryRequestsMissing
+        - polaris.memoryLimitsMissing
+        - polaris.cpuRequestsMissing
+        - polaris.pullPolicyNotAlways
+        - polaris.tagNotSpecified
+        - polaris.metadataAndInstanceMismatched
+        - polaris.automountServiceAccountToken
+type: PolicyMapping

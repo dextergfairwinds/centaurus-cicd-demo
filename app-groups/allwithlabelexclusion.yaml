@@ -1,0 +1,13 @@
+name: allwithlabelexclusion
+spec:
+    exclude:
+        - namespaces:
+            - kube-system
+            - istio-system
+            - argocd
+            - sumologic
+          labels:
+            - ignore: fairwinds-insights
+    match:
+        - {}
+type: AppGroup

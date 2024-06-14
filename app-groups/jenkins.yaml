@@ -1,8 +1,6 @@
-name: allresources-group
+name: jenkins
 spec:
-    exclude:
+    match:
         - namespaces:
             - jenkins-production
-    match:
-        - {}
 type: AppGroup

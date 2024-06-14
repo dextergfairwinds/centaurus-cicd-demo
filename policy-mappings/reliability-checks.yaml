@@ -1,15 +1,15 @@
-name: standard-policies
+name: reliability-checks
 spec:
     enabled: false
     appGroups:
-        - allresources-group
+        - jenkins
     contexts:
         - Agent
         - Admission
         - CI
     policies:
-        - polaris.memoryRequestsMissing
+        - polaris.livenessProbeMissing
+        - polaris.readinessProbeMissing
         - polaris.cpuRequestsMissing
-        - prometheus-metrics.right_size_container
-        - opa.finops-labels
+        - polaris.memoryRequestsMissing
 type: PolicyMapping

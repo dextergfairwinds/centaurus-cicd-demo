@@ -1,8 +1,18 @@
-type: PolicyMapping
 name: security-policies
 spec:
-  block: true
-  appGroups: [production-group]
-  policies: [polaris.runAsRootAllowed, polaris.runAsPrivileged, trivy, polaris.sensitiveContainerEnvVar, polaris.rolebindingClusterAdminRole, polaris.privilegeEscalationAllowed, polaris.notReadOnlyRootFileSystem]
-  # contexts: [Admission]
-  contexts: [Admission, Agent, CI]
+    enabled: false
+    appGroups:
+        - production-group
+    contexts:
+        - Agent
+        - Admission
+        - CI
+    policies:
+        - polaris.runAsRootAllowed
+        - polaris.runAsPrivileged
+        - trivy
+        - polaris.sensitiveContainerEnvVar
+        - polaris.rolebindingClusterAdminRole
+        - polaris.privilegeEscalationAllowed
+        - polaris.notReadOnlyRootFileSystem
+type: PolicyMapping
